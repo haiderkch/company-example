@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إبداع العالمية | شركة رائدة في التصميم والابتكار</title>
+    <meta name="description" content="إبداع العالمية تقدم حلولاً مبتكرة في التصميم والتطوير الرقمي. اكتشف مشاريعنا وطاقمنا المحترف.">
+    <meta name="keywords" content="تصميم, تطوير ويب, تطبيقات, برمجة, جرافيك ديزاين, شركة تقنية">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --text-light: #2d3436;
+            --text-dark: #dfe6e9;
+            --bg-light: rgba(255, 255, 255, 0.85);
+            --bg-dark: rgba(0, 0, 0, 0.85);
+            --card-light: rgba(255, 255, 255, 0.75);
+            --card-dark: rgba(30, 30, 30, 0.75);
+            --nav-light: rgba(255, 255, 255, 0.95);
+            --nav-dark: rgba(0, 0, 0, 0.95);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --blur: blur(15px);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        [data-theme="dark"] {
+            --text-primary: var(--text-dark);
+            --text-secondary: rgba(223, 230, 233, 0.8);
+            --bg-primary: var(--bg-dark);
+            --bg-card: var(--card-dark);
+            --nav-bg: var(--nav-dark);
+        }
+
+        [data-theme="light"] {
+            --text-primary: var(--text-light);
+            --text-secondary: rgba(45, 52, 54, 0.8);
+            --bg-primary: var(--bg-light);
+            --bg-card: var(--card-light);
+            --nav-bg: var(--nav-light);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* التصميم الزجاجي المتطور */
+        .glass {
+            background: var(--bg-card);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* شريط التنقل المتطور */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            padding: 18px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 12px;
+            color: var(--accent-color);
+            font-size: 2.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-color);
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle, .lang-toggle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            cursor: pointer;
+            margin-left: 15px;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover, .lang-toggle:hover {
+            transform: rotate(15deg) scale(1.1);
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* المحتوى الرئيسي */
+        main {
+            padding-top: 100px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover:before {
+            opacity: 1;
+        }
+
+        /* قسم المشاريع */
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            font-size: 3rem;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            padding: 25px;
+            border-radius: 20px;
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover:before {
+            opacity: 1;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* قسم فريق العمل */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(-45deg);
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .team-member:hover:before {
+            opacity: 1;
+            animation: shine 1.5s linear;
+        }
+
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+
+        .member-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 5px solid var(--primary-color);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-img {
+            transform: scale(1.1);
+            border-color: var(--accent-color);
+        }
+
+        .member-name {
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+        }
+
+        .member-role {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .member-desc {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            transition: var(--transition);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            box-shadow: var(--shadow);
+        }
+
+        .social-links a:hover {
+            color: white;
+            background: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        /* قسم الخدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .service-desc {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* صفحة الاتصال */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(253, 121, 168, 0.3);
+        }
+
+        textarea.form-control {
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        /* إحصائيات */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 70px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .stat-text {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+        }
+
+        /* التكيف مع الهاتف */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .projects-grid,
+            .team-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* وضع اللغة الإنجليزية */
+        [dir="ltr"] {
+            text-align: left;
+        }
+
+        [dir="ltr"] .logo i {
+            margin-right: 0;
+            margin-left: 12px;
+        }
+
+        [dir="ltr"] .nav-links a:after {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="ltr"] .theme-toggle, 
+        [dir="ltr"] .lang-toggle {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+
+        /* تأثيرات إضافية */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body data-theme="light" dir="rtl" lang="ar">
+    <!-- جسيمات الخلفية -->
+    <div id="particles-js" class="particles-js"></div>
+    
+    <!-- شريط التنقل -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-brain"></i>
+                <span>إبداع العالمية</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">عن الشركة</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#projects">المشاريع</a></li>
+                <li><a href="#team">فريق العمل</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="lang-toggle" id="langToggle">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main>
+        <!-- قسم البطل -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content glass" style="padding: 60px;">
+                    <h1>إبداع بلا حدود <br> وتكنولوجيا بلا قيود</h1>
+                    <p>شركة "إبداع العالمية" تقدم حلولاً مبتكرة وجذابة تلبي احتياجات العصر الرقمي. نحن ندمج الإبداع مع التكنولوجيا لإنشاء تجارب رقمية استثنائية تترك أثراً مميزاً.</p>
+                    <a href="#projects" class="btn">استكشف مشاريعنا <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- إحصائيات -->
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-text">مشروع مكتمل</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-text">عميل راضي</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-text">جائزة عالمية</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-number" data-count="40">0</div>
+                    <div class="stat-text">فريق محترف</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم المشاريع -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">مشاريعنا المميزة</h2>
+                <div class="projects-grid">
+                    <!-- مشروع 1 -->
+                    <div class="project-card glass">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="مشروع تحليلات البيانات" class="project-img">
+                        <div class="project-tags">
+                            <span class="project-tag">ويب</span>
+                            <span class="project-tag">بيانات</span>
+                            <span class="project-tag">تحليل</span>
+                        </div>
+                        <h3 class="project-title">نظام تحليلات البيانات</h3>
+                        <p class="project-desc">منصة متكاملة لتحليل البيانات وتقديم رؤى قابلة للتنفيذ للشركات بمختلف أحجامها. تم تطوير النظام بلغات برمجية متقدمة وتصميم تفاعلي مبتكر.</p>
+                        <a href="#" class="btn">عرض التفاصيل</a>
+                    </div>
+                    
+                    <!-- مشروع 2 -->
+                    <div class="project-card glass">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="التطبيق المالي" class="project-img">
+                        <div class="project-tags">
+                            <span class="project-tag">جوال</span>
+                            <span class="project-tag">مالي</span>
+                            <span class="project-tag">أمان</span>
+                        </div>
+                        <h3 class="project-title">التطبيق المالي الذكي</h3>
+                        <p class="project-desc">تطبيق مالي يساعد المستخدمين على إدارة أموالهم واستثماراتهم بطرق ذكية وآمنة. يتميز بواجهة مستخدم بسيطة وتقنيات حماية متطورة.</p>
+                        <a href="#" class="btn">عرض التفاصيل</a>
+                    </div>
+                    
+                    <!-- مشروع 3 -->
+                    <div class="project-card glass">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="منصة التعليم" class="project-img">
+                        <div class="project-tags">
+                            <span class="project-tag">تعليم</span>
+                            <span class="project-tag">تفاعلي</span>
+                            <span class="project-tag">منصة</span>
+                        </div>
+                        <h3 class="project-title">منصة التعليم الإلكتروني</h3>
+                        <p class="project-desc">بيئة تعليمية تفاعلية توفر تجربة تعلم شخصية لملايين الطلاب حول العالم. تحتوي على أدوات متقدمة للمدرسين والطلاب على حد سواء.</p>
+                        <a href="#" class="btn">عرض التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم فريق العمل -->
+        <section id="team">
+            <div class="container">
+                <h2 class="section-title">فريق العمل</h2>
+                <div class="team-grid">
+                    <!-- عضو الفريق 1 -->
+                    <div class="team-member glass">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="أحمد السيد" class="member-img">
+                        <h3 class="member-name">أحمد السيد</h3>
+                        <p class="member-role">المدير التنفيذي</p>
+                        <p class="member-desc">خبير تقني مع أكثر من 15 عاماً من الخبرة في إدارة المشاريع التقنية وتطوير الاستراتيجيات الرقمية للشركات العالمية.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- عضو الفريق 2 -->
+                    <div class="team-member glass">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="سارة محمد" class="member-img">
+                        <h3 class="member-name">سارة محمد</h3>
+                        <p class="member-role">مديرة التصميم</p>
+                        <p class="member-desc">مصممة جرافيك محترفة حاصلة على جوائز عالمية في التصميم التفاعلي وتجربة المستخدم، تتمتع بخبرة واسعة في إنشاء هويات بصرية مميزة.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- عضو الفريق 3 -->
+                    <div class="team-member glass">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="خالد أمين" class="member-img">
+                        <h3 class="member-name">خالد أمين</h3>
+                        <p class="member-role">المطور الرئيسي</p>
+                        <p class="member-desc">مطور Full Stack يمتلك خبرة واسعة في بناء تطبيقات الويب المعقدة وتطبيقات الجوال باستخدام أحدث التقنيات وأطر العمل الحديثة.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الخدمات -->
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">خدماتنا</h2>
+                <div class="services-grid">
+                    <!-- خدمة 1 -->
+                    <div class="service-card glass">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="service-title">تطوير الويب</h3>
+                        <p class="service-desc">نقوم بتصميم وتطوير مواقع الويب بتقنيات حديثة وتصميم متجاوب يلبي جميع احتياجاتك وأحدث معايير الصناعة.</p>
+                    </div>
+                    
+                    <!-- خدمة 2 -->
+                    <div class="service-card glass">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-title">تطبيقات الجوال</h3>
+                        <p class="service-desc">نصمم ونطور تطبيقات جوال مبتكرة لأنظمة iOS و Android مع ضمان أداء عالي وتجربة مستخدم فريدة.</p>
+                    </div>
+                    
+                    <!-- خدمة 3 -->
+                    <div class="service-card glass">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="service-title">تصميم UI/UX</h3>
+                        <p class="service-desc">نقدم حلول تصميم مبتكرة تركز على تجربة المستخدم وواجهة المستخدم لضمان تفاعل مثالي بين المستخدم والتطبيق.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الاتصال -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">اتصل بنا</h2>
+                <div class="contact-form glass">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- التذييل -->
+    <footer style="background: var(--nav-bg); padding: 50px 0; text-align: center; margin-top: 100px;">
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 30px;">
+                <i class="fas fa-brain"></i>
+                <span>إبداع العالمية</span>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 40px;">
+                <a href="#" style="color: var(--text-primary); font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color: var(--text-primary); font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: var(--text-primary); font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: var(--text-primary); font-size: 1.2rem;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <p style="color: var(--text-secondary);">© 2023 إبداع العالمية. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- مكتبات JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // تهيئة الجسيمات
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#ffffff",
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "grab" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        });
+
+        // تبديل الوضع الداكن/الفاتح
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+        
+        // تبديل اللغة
+        const langToggle = document.getElementById('langToggle');
+        const html = document.documentElement;
+        
+        langToggle.addEventListener('click', () => {
+            if (html.getAttribute('lang') === 'ar') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                // هنا سيتم تغيير جميع النصوص للغة الإنجليزية في تطبيق حقيقي
+                document.querySelector('.logo span').textContent = 'Ibdaa Global';
+                document.querySelector('title').textContent = 'Ibdaa Global - Leading Design and Innovation Company';
+                // ... وغيرها من النصوص
+            } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                // إعادة النصوص إلى العربية
+                document.querySelector('.logo span').textContent = 'إبداع العالمية';
+                document.querySelector('title').textContent = 'إبداع العالمية - شركة رائدة في التصميم والابتكار';
+                // ... وغيرها من النصوص
+            }
+        });
+
+        // عدادات الإحصائيات
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = Math.min(count + increment, target);
+                    setTimeout(() => animateCounters(), 1);
+                }
+            });
+        }
+
+        // تشغيل العدادات عند التمرير إلى القسم
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats-grid'));
+    </script>
+</body>
+</html>
